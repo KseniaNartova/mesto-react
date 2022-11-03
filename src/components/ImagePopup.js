@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function ImagePopup({ card, isOpen, onClose }) {
+export default function ImagePopup({card, isOpen, onClose}) {
+  
   return (
     <div className={`popup popup_type_big-image ${isOpen && "popup_open"}`}>
       <div className="popup__content popup__content_type_big-image">

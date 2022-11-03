@@ -35,7 +35,7 @@ class Api {
         headers: this._headers,
         body: JSON.stringify({
           name: data.name,
-          about: data.aboutself,
+          about: data.about,
         }),
       }).then((res) => {
         return this.#onResponce(res);
@@ -47,7 +47,7 @@ class Api {
         method: "POST",
         headers: this._headers,
         body: JSON.stringify({
-          name: data.title,
+          name: data.name,
           link: data.link,
         }),
       }).then((res) => {
@@ -89,6 +89,15 @@ class Api {
         body: JSON.stringify({
           avatar: data,
         }),
+      }).then((res) => {
+        return this.#onResponce(res);
+      });
+    }
+
+    changeLikeCardStatus(cardId, isLiked) {
+      return fetch(`${this._url}cards/${cardId}/likes`, {
+        method: `${isLiked ? 'PUT' : 'DELETE'}`,
+        headers: this._headers,
       }).then((res) => {
         return this.#onResponce(res);
       });
