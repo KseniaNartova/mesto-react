@@ -1,9 +1,9 @@
-import Logo from "../images/logo.svg"
+import logo from "../images/logo.svg"
 
 export default function Header() {
     return (
         <header className="header">
-            <img src={Logo} alt="логотип Mesto Russia" className="header__logo"/>
+            <img src={logo} alt="логотип Mesto Russia" className="header__logo"/>
         </header>
     )
 }
